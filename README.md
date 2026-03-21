@@ -61,5 +61,5 @@ O relatório foi dividido em pilares estratégicos para atender diferentes área
 
 ## 📬 Contato
 Desenvolvido por **Cleiton Teles**
-LinkedIn (www.linkedin.com/in/cleitonteles)
+*LinkedIn (www.linkedin.com/in/cleitonteles)
 * [Portfólio de Projetos](https://github.com/CleitonTelesDev?tab=repositories)
