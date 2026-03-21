@@ -1,61 +1,58 @@
-# 💄 Aura Beauty Co. - Business Intelligence Dashboard
+# 💄 Aura Beauty Co. - Dashboard de Performance de Vendas
+> **Objetivo:** Implementação de Cultura Data Driven para o setor de cosméticos.
 
-![Capa do Projeto](https://via.placeholder.com/1000x300?text=Aura+Beauty+Co.+Data+Driven+Project)
+![Capa do Dashboard](https://via.placeholder.com/1000x400?text=Dashboard+Aura+Beauty+Co.)
+
+---
 
 ## 📝 Sobre o Projeto
-A **Aura Beauty Co.** é uma empresa do setor de cosméticos que atua no mercado desde 2022. Historicamente, a empresa operava sem um acompanhamento analítico rigoroso de seus dados. 
+A **Aura Beauty Co.** é uma empresa do ramo da beleza que atua desde 2022. Apesar da presença no mercado, a tomada de decisão era baseada em processos manuais e intuição. 
 
-Este projeto marca a transição da companhia para uma **Cultura Data Driven**, utilizando o Power BI para transformar dados brutos de vendas, produtos e logística em decisões estratégicas fundamentadas.
+Este projeto marca a transição da empresa para uma **Cultura Data Driven**, transformando dados históricos em inteligência de mercado para otimizar faturamento, logística (Ship-to-Door) e precificação.
 
 ---
 
-## 🛠️ Etapas de Desenvolvimento
+## 🛠️ Estrutura e Desenvolvimento
 
-### 1. ETL e Tratamento de Dados (Power Query)
-Os dados brutos foram processados para garantir a integridade das análises:
-* **Limpeza:** Remoção de duplicatas e tratamento de valores nulos em colunas críticas como `Preço` e `id_produto`.
-* **Padronização:** Uniformização de categorias e subcategorias de produtos.
-* **Cálculos Customizados:** Criação da métrica *Ship-to-Door* (tempo entre o envio e a entrega final) e tratamento de datas para séries temporais.
+### 1. Tratamento de Dados (ETL)
+Utilizei o Power Query para a limpeza e transformação dos dados brutos, garantindo que colunas como `Preço`, `Quantidade` e as coordenadas geográficas (`Latitude`/`Longitude`) estivessem prontas para análise, sem inconsistências.
 
 ### 2. Modelagem de Dados
-Utilizei a arquitetura **Star Schema (Esquema Estrela)** para garantir performance e escalabilidade:
-* **Tabela Fato:** `Pedidos` (contendo transações, quantidades e descontos).
-* **Tabelas Dimensão:** `Produtos`, `Marcas`, `Calendário` e `Geolocalização`.
-* **Relacionamentos:** Estabelecidos através de chaves primárias e estrangeiras (ex: `id_produto`, `Cod_marca`).
+O modelo foi estruturado seguindo o padrão **Star Schema (Esquema Estrela)** para máxima performance:
+* **Fato:** `fPedidos` (Transações, Quantidades, Descontos e Localização).
+* **Dimensões:** `dProdutosFinais`, `dMarcas`, `dMetaMensal` e `dCalendario`.
+
+### 3. Inteligência de Dados (DAX)
+Abaixo estão as principais métricas desenvolvidas para sustentar os indicadores de negócio:
+
+| Medida | Lógica Aplicada | Objetivo |
+| :--- | :--- | :--- |
+| **Faturamento** | `SUMX(fPedidos, [quantidade] * RELATED(dProdutosFinais[Preço]))` | Cálculo preciso de receita total cruzando tabelas. |
+| **Faturamento Médio** | `AVERAGEX(fPedidos, [quantidade] * RELATED(dProdutosFinais[Preço]))` | Identificar o ticket médio por pedido. |
+| **Meta Máxima** | `IF([Faturamento] < [SomaMetas], [SomaMetas] * 1.2, [Faturamento])` | Ajuste dinâmico do eixo do gráfico de medidor. |
+| **Meta S2Door** | `8` | Target fixo de 8 dias para entrega (Ship-to-Door). |
+| **Soma Metas** | `AVERAGE(dMetaMensal[Meta])` | Base de comparação para performance mensal. |
 
 ---
 
-## 📊 Visualizações e Análises (Dashboards)
+## 📊 Visualizações e Insights
 
-O relatório foi dividido em pilares estratégicos para atender diferentes áreas da empresa:
+O dashboard foi construído para responder perguntas fundamentais do negócio:
 
-### 💰 Performance Comercial
-* **Faturamento por Produto:** Gráfico de barras clusterizado com linhas de referência para identificar os produtos "Best Sellers".
-* **Análise de Marcas:** Gráfico dinâmico que permite alternar a visão entre **Origem (Nacional/Internacional)**, **Marca** e **Categoria** via parâmetros.
-* **Acompanhamento de Metas:** Gráfico de medidor (Gauge) comparando o faturamento realizado contra a meta mensal estabelecida.
-
-### 📈 Tendências e Previsões
-* **Série Temporal:** Gráfico de linhas com análise de tendência e **Forecasting (Previsão)** para os próximos meses, além de detecção automática de anomalias no faturamento.
-* **Elasticidade de Preço:** Gráfico de dispersão analisando a correlação entre variação de preço e volume de faturamento.
-
-### 🚚 Logística e Expansão
-* **Mapa de Calor:** Visualização geográfica do faturamento por cidade para identificar regiões com potencial de expansão.
-* **Eficiência Logística:** KPI de *Ship-to-Doors* monitorando o tempo médio de entrega anual (Métrica: "Baixo é bom").
+* **Faturamento por Produto:** Gráfico de barras clusterizado com **linhas de referência** para identificar produtos de alta performance.
+* **Análise de Marcas:** Uso de **parâmetros de campo** para comparar categorias por Origem, Marca e Categoria no mesmo gráfico.
+* **Séries Temporais:** Análise de faturamento com linhas de tendência, **Forecasting (Previsão)** e detecção de **Anomalias**.
+* **Logística Geográfica:** Gráfico de mapa utilizando as colunas de cidade e bolhas de faturamento para visualização regional.
+* **KPI Ship-to-Door:** Monitoramento do tempo "do envio à porta", focado na eficiência logística (onde "baixo é bom").
+* **Gráfico de Medidor:** Visualização clara do faturamento vs. meta, com ajuste dinâmico de eixo.
+* **Análise de Dispersão:** Estudo da correlação entre **Faturamento e Preço**, validando se a redução de preços aumenta o volume total de vendas.
 
 ---
 
 ## 🚀 Tecnologias Utilizadas
-* **Power BI:** Visualização e dashboard.
-* **DAX (Data Analysis Expressions):** Criação de medidas complexas e KPIs.
-* **Power Query (M):** Extração e transformação de dados.
-* **Excel/CSV:** Fontes de dados iniciais.
-
----
-
-## 💡 Insights Gerados
-* Identificação de quais marcas internacionais possuem maior margem de contribuição.
-* Detecção de gargalos logísticos em cidades específicas através do KPI de entrega.
-* Validação de que reduções pontuais de preço impactam positivamente o faturamento total (elasticidade detectada no gráfico de dispersão).
+* **Power BI** (Visualização e DAX)
+* **Power Query** (M Language)
+* **GitHub** (Documentação e Portfólio)
 
 ---
 
@@ -63,3 +60,4 @@ O relatório foi dividido em pilares estratégicos para atender diferentes área
 Desenvolvido por **Cleiton Teles**<br>
 [LinkedIn] www.linkedin.com/in/cleitonteles
 * [Portfólio de Projetos](https://github.com/CleitonTelesDev?tab=repositories)
+* [E-mail](juantrick@gmail.com)
