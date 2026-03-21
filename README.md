@@ -58,6 +58,6 @@ O dashboard foi construído para responder perguntas fundamentais do negócio:
 
 ## 📬 Contato
 Desenvolvido por **Cleiton Teles**<br>
-LinkedIn: www.linkedin.com/in/cleitonteles
+LinkedIn: www.linkedin.com/in/cleitonteles<br>
 E-mail: juantrick@gmail.com
 * [Portfólio de Projetos](https://github.com/CleitonTelesDev?tab=repositories)
