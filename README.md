@@ -1,7 +1,7 @@
 # 💄 Aura Beauty Co. - Dashboard de Performance de Vendas
 > **Objetivo:** Implementação de Cultura Data Driven para o setor de cosméticos.
 
-![Capa do Dashboard](https://via.placeholder.com/1000x400?text=Dashboard+Aura+Beauty+Co.)
+![Capa do Dashboard](E:\Projetos\Power-BI)
 
 ---
 
