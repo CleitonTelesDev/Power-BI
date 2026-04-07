@@ -49,6 +49,9 @@ O dashboard foi construído para responder perguntas fundamentais do negócio:
 
 ## Vendas
 ![Vendas.png](https://github.com/CleitonTelesDev/Power-BI/blob/main/Vendas.png?raw=true)
+
+## Produtos
+![Produtos.png]()
 ---
 
 ## 🚀 Tecnologias Utilizadas
