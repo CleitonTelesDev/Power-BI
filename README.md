@@ -76,12 +76,13 @@ Principais métricas desenvolvidas:
 ---
 
 ## 📁 Estrutura do Projeto  
-📦 aura-beauty-powerbi  
+📦 Power-BI  
 ┣ 📂 data  
 ┣ 📂 powerbi  
 ┣ 📂 images  
-┃ ┣ 📂 dashboards  
-┃ ┗ 📂 modelo  
+┃ ┣ 📂 branding  
+┃ ┣ 📂 dashboards 
+┃ ┗ 📂 modelo
 ┣ README.md  
 
 ---
