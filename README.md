@@ -51,6 +51,8 @@ Principais etapas:
 
 ### 🔹 2. Modelagem de Dados  
 
+![Modelo]()
+
 O modelo foi estruturado utilizando o padrão **Star Schema**, garantindo alta performance e escalabilidade.
 
 - 🧾 **Fato:** `fPedidos`  
@@ -79,12 +81,12 @@ Principais métricas desenvolvidas:
 ---
 
 ## 📁 Estrutura do Projeto  
-📦 aura-beauty-powerbi
-┣ 📂 data
-┣ 📂 powerbi
-┣ 📂 images
-┃ ┣ 📂 dashboards
-┃ ┗ 📂 modelo
+📦 aura-beauty-powerbi  
+┣ 📂 data  
+┣ 📂 powerbi  
+┣ 📂 images  
+┃ ┣ 📂 dashboards  
+┃ ┗ 📂 modelo  
 ┣ README.md  
 
 
@@ -118,7 +120,7 @@ Sou um profissional de dados focado em transformar dados em **insights estratég
 
 ---
 
-## ⭐ Destaque  
+## ⭐ Competências Demonstradas  
 
 Este projeto demonstra habilidades em:
 
