@@ -1,5 +1,7 @@
 # 💄 Aura Beauty Co. - Análise de Performance de Vendas  
 
+"[Marca](https://github.com/CleitonTelesDev/Power-BI/blob/main/images/branding/Marca.png?raw=true)
+
 ### 📊 Transformando dados em decisões estratégicas no setor de cosméticos  
 
 ---
@@ -38,7 +40,7 @@ Este projeto tem como objetivo implementar uma abordagem **Data Driven**, transf
 
 ## ⚙️ Pipeline de Dados  
 
-### 🔹 1. Tratamento de Dados (ETL)  
+### Tratamento de Dados (ETL)  
 
 Utilização do **Power Query** para limpeza e transformação dos dados, garantindo consistência e qualidade para análise.
 
@@ -49,7 +51,7 @@ Principais etapas:
 
 ---
 
-### 🔹 2. Modelagem de Dados  
+### Modelagem de Dados  
 
 ![Modelo]()
 
@@ -60,13 +62,7 @@ O modelo foi estruturado utilizando o padrão **Star Schema**, garantindo alta p
 
 ---
 
-## 🖼️ Modelo de Dados  
-
-![Modelo de Dados](./images/modelo/modelo_dados.png)
-
----
-
-### 🔹 3. Inteligência de Dados (DAX)  
+### Inteligência de Dados (DAX)  
 
 Principais métricas desenvolvidas:
 
@@ -88,7 +84,6 @@ Principais métricas desenvolvidas:
 ┃ ┣ 📂 dashboards  
 ┃ ┗ 📂 modelo  
 ┣ README.md  
-
 
 ---
 
