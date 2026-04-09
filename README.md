@@ -33,7 +33,8 @@ Este projeto tem como objetivo implementar uma abordagem **Data Driven**, transf
 - 💰 Reduções de preço aumentam volume de vendas, mas nem sempre resultam em maior receita total  
 - 🌎 Determinadas regiões concentram maior volume de vendas, sugerindo oportunidades de expansão estratégica  
 - 🚚 O tempo de entrega (Ship-to-Door) impacta diretamente a eficiência operacional  
-- 📉 Produtos com baixo desempenho indicam oportunidades de revisão de portfólio  
+- 📉 Produtos com baixo desempenho indicam oportunidades de revisão de portfólio
+- 👉 Esses insights permitem direcionar estratégias de preço, logística e portfólio de produtos.
 
 ---
 
@@ -84,6 +85,12 @@ Principais métricas desenvolvidas:
 ┃ ┣ 📂 dashboards  
 ┃ ┗ 📂 modelo  
 ┣ README.md  
+
+---
+
+## 📌 Contexto de Negócio  
+
+Este projeto simula um cenário real de análise de vendas no varejo de cosméticos, com foco em tomada de decisão orientada por dados.
 
 ---
 
