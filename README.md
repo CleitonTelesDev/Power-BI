@@ -57,8 +57,20 @@ O modelo foi estruturado seguindo o padrão Star Schema, garantindo alta perform
 
 ![Modelo](https://github.com/CleitonTelesDev/Power-BI/blob/main/images/modelo/modelo_dados.png?raw=true)
 
-- 🧾 **Fato:** `fPedidos`  
-- 📊 **Dimensões:** `dProdutosFinais`, `dMarcas`, `dMetaMensal`, `dCalendario`  
+- 🧾 **Tabela Fato:**  
+  - `fPedidos` → responsável pelo registro das transações  
+
+- 📊 **Tabelas Dimensão:**  
+  - `dProdutosFinais`  
+  - `dMarcas`  
+  - `dCategoriasProdutos`  
+  - `dCalendario`  
+  - `dMetaMensal`  
+
+- ⚙️ **Tabelas auxiliares:**  
+  - Tabelas de medidas e apoio analítico utilizadas para cálculos dinâmicos e comparações  
+
+O modelo permite análises eficientes por produto, marca, categoria e tempo, suportando diferentes perspectivas de negócio.  
 
 ---
 
