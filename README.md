@@ -1,8 +1,7 @@
 # 💄 Aura Beauty Co. - Análise de Performance de Vendas  
 
-![Marca](https://github.com/CleitonTelesDev/Power-BI/blob/main/images/branding/Marca%20Aura.png?raw=true)
-
 ### 📊 Transformando dados em decisões estratégicas no setor de cosméticos  
+![Marca](https://github.com/CleitonTelesDev/Power-BI/blob/main/images/branding/Marca%20Aura.png?raw=true)
 
 ---
 
@@ -53,7 +52,7 @@ Principais etapas:
 
 ### Modelagem de Dados  
 
-![Modelo]()
+![Modelo](https://github.com/CleitonTelesDev/Power-BI/blob/main/images/modelo/modelo_dados.png?raw=true)
 
 O modelo foi estruturado utilizando o padrão **Star Schema**, garantindo alta performance e escalabilidade.
 
