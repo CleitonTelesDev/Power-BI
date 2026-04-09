@@ -50,11 +50,11 @@ Principais etapas:
 
 ---
 
-### Modelagem de Dados  
+### 🖼️ Modelagem de Dados  
 
 ![Modelo](https://github.com/CleitonTelesDev/Power-BI/blob/main/images/modelo/modelo_dados.png?raw=true)
 
-O modelo foi estruturado utilizando o padrão **Star Schema**, garantindo alta performance e escalabilidade.
+O modelo foi estruturado seguindo o padrão Star Schema, garantindo alta performance e organização para análises analíticas.
 
 - 🧾 **Fato:** `fPedidos`  
 - 📊 **Dimensões:** `dProdutosFinais`, `dMarcas`, `dMetaMensal`, `dCalendario`  
