@@ -1,6 +1,6 @@
 # 💄 Aura Beauty Co. - Análise de Performance de Vendas  
 
-"[Marca](https://github.com/CleitonTelesDev/Power-BI/blob/main/images/branding/Marca.png?raw=true)
+[Marca](https://github.com/CleitonTelesDev/Power-BI/blob/main/images/branding/Marca.png?raw=true)
 
 ### 📊 Transformando dados em decisões estratégicas no setor de cosméticos  
 
