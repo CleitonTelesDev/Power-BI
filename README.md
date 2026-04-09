@@ -81,8 +81,8 @@ Principais métricas desenvolvidas:
 ┣ 📂 powerbi  
 ┣ 📂 images  
 ┃ ┣ 📂 branding  
-┃ ┣ 📂 dashboards 
-┃ ┗ 📂 modelo
+┃ ┣ 📂 dashboards  
+┃ ┗ 📂 modelo  
 ┣ README.md  
 
 ---
