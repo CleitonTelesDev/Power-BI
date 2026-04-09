@@ -1,63 +1,131 @@
-# 💄 Aura Beauty Co. - Dashboard de Performance de Vendas
-> **Objetivo:** Implementação de Cultura Data Driven para o setor de cosméticos.
+# 💄 Aura Beauty Co. - Análise de Performance de Vendas  
 
-![Marca.png](https://github.com/CleitonTelesDev/Power-BI/blob/main/Aura%20Beauty%20Co/Dados/imagens_power_bi_visualizando_analisando_dados/Marca%20Aura.png?raw=true)
-
----
-
-## 📝 Sobre o Projeto
-A **Aura Beauty Co.** é uma empresa do ramo da beleza que atua desde 2022. Apesar da presença no mercado, a tomada de decisão era baseada em processos manuais e intuição. 
-
-Este projeto marca a transição da empresa para uma **Cultura Data Driven**, transformando dados históricos em inteligência de mercado para otimizar faturamento, logística (Ship-to-Door) e precificação.
+### 📊 Transformando dados em decisões estratégicas no setor de cosméticos  
 
 ---
 
-## 🛠️ Estrutura e Desenvolvimento
+## 🧠 Sobre o Projeto  
 
-### 1. Tratamento de Dados (ETL)
-Utilizei o Power Query para a limpeza e transformação dos dados brutos, garantindo que colunas como `Preço`, `Quantidade` e as coordenadas geográficas (`Latitude`/`Longitude`) estivessem prontas para análise, sem inconsistências.
+A **Aura Beauty Co.** é uma empresa do segmento de beleza que, apesar de sua atuação desde 2022, baseava suas decisões em processos manuais e intuição.
 
-### 2. Modelagem de Dados
-O modelo foi estruturado seguindo o padrão **Star Schema (Esquema Estrela)** para máxima performance:
-* **Fato:** `fPedidos` (Transações, Quantidades, Descontos e Localização).
-* **Dimensões:** `dProdutosFinais`, `dMarcas`, `dMetaMensal` e `dCalendario`.
+Este projeto tem como objetivo implementar uma abordagem **Data Driven**, transformando dados históricos em **insights estratégicos** para apoiar decisões relacionadas a:
 
-### 3. Inteligência de Dados (DAX)
-Abaixo estão as principais métricas desenvolvidas para sustentar os indicadores de negócio:
+- 📈 Faturamento  
+- 🚚 Logística (Ship-to-Door)  
+- 💰 Precificação  
+
+---
+
+## 📊 Dashboard  
+
+### 🔍 Visão Geral
+
+![Dashboard Vendas](./images/dashboards/vendas.png)
+
+![Dashboard Produtos](./images/dashboards/produtos.png)
+
+---
+
+## 📊 Principais Insights  
+
+- 📈 O faturamento está concentrado em um grupo reduzido de produtos, indicando efeito Pareto  
+- 💰 Reduções de preço aumentam volume de vendas, mas nem sempre resultam em maior receita total  
+- 🌎 Determinadas regiões concentram maior volume de vendas, sugerindo oportunidades de expansão estratégica  
+- 🚚 O tempo de entrega (Ship-to-Door) impacta diretamente a eficiência operacional  
+- 📉 Produtos com baixo desempenho indicam oportunidades de revisão de portfólio  
+
+---
+
+## ⚙️ Pipeline de Dados  
+
+### 🔹 1. Tratamento de Dados (ETL)  
+
+Utilização do **Power Query** para limpeza e transformação dos dados, garantindo consistência e qualidade para análise.
+
+Principais etapas:
+- Padronização de colunas (`Preço`, `Quantidade`)  
+- Tratamento de valores inconsistentes  
+- Preparação de dados geográficos (Latitude / Longitude)  
+
+---
+
+### 🔹 2. Modelagem de Dados  
+
+O modelo foi estruturado utilizando o padrão **Star Schema**, garantindo alta performance e escalabilidade.
+
+- 🧾 **Fato:** `fPedidos`  
+- 📊 **Dimensões:** `dProdutosFinais`, `dMarcas`, `dMetaMensal`, `dCalendario`  
+
+---
+
+## 🖼️ Modelo de Dados  
+
+![Modelo de Dados](./images/modelo/modelo_dados.png)
+
+---
+
+### 🔹 3. Inteligência de Dados (DAX)  
+
+Principais métricas desenvolvidas:
 
 | Medida | Lógica Aplicada | Objetivo |
 | :--- | :--- | :--- |
-| **Faturamento** | `SUMX(fPedidos, [quantidade] * RELATED(dProdutosFinais[Preço]))` | Cálculo preciso de receita total cruzando tabelas. |
-| **Faturamento Médio** | `AVERAGEX(fPedidos, [quantidade] * RELATED(dProdutosFinais[Preço]))` | Identificar o ticket médio por pedido. |
-| **Meta Máxima** | `IF([Faturamento] < [SomaMetas], [SomaMetas] * 1.2, [Faturamento])` | Ajuste dinâmico do eixo do gráfico de medidor. |
-| **Meta S2Door** | `8` | Target fixo de 8 dias para entrega (Ship-to-Door). |
-| **Soma Metas** | `AVERAGE(dMetaMensal[Meta])` | Base de comparação para performance mensal. |
+| **Faturamento** | `SUMX(fPedidos, [quantidade] * RELATED(dProdutosFinais[Preço]))` | Receita total |
+| **Faturamento Médio** | `AVERAGEX(fPedidos, [quantidade] * RELATED(dProdutosFinais[Preço]))` | Ticket médio |
+| **Meta Máxima** | `IF([Faturamento] < [SomaMetas], [SomaMetas] * 1.2, [Faturamento])` | Ajuste dinâmico |
+| **Meta S2Door** | `8` | Tempo ideal de entrega |
+| **Soma Metas** | `AVERAGE(dMetaMensal[Meta])` | Comparação mensal |
 
 ---
 
-## 📊 Visualizações e Insights
+## 📁 Estrutura do Projeto  
+📦 aura-beauty-powerbi
+┣ 📂 data
+┣ 📂 powerbi
+┣ 📂 images
+┃ ┣ 📂 dashboards
+┃ ┗ 📂 modelo
+┣ README.md  
 
-O dashboard foi construído para responder perguntas fundamentais do negócio:
-
-* **Faturamento por Produto:** Gráfico de barras clusterizado com **linhas de referência** para identificar produtos de alta performance.
-* **Análise de Marcas:** Uso de **parâmetros de campo** para comparar categorias por Origem, Marca e Categoria no mesmo gráfico.
-* **Séries Temporais:** Análise de faturamento com linhas de tendência, **Forecasting (Previsão)** e detecção de **Anomalias**.
-* **Logística Geográfica:** Gráfico de mapa utilizando as colunas de cidade e bolhas de faturamento para visualização regional.
-* **KPI Ship-to-Door:** Monitoramento do tempo "do envio à porta", focado na eficiência logística (onde "baixo é bom").
-* **Gráfico de Medidor:** Visualização clara do faturamento vs. meta, com ajuste dinâmico de eixo.
-* **Análise de Dispersão:** Estudo da correlação entre **Faturamento e Preço**, validando se a redução de preços aumenta o volume total de vendas.
 
 ---
 
-## 🚀 Tecnologias Utilizadas
-* **Power BI** (Visualização e DAX)
-* **Power Query** (M Language)
-* **GitHub** (Documentação e Portfólio)
+## 🚀 Tecnologias Utilizadas  
+
+- Power BI  
+- Power Query (M)  
+- DAX  
+- GitHub  
 
 ---
 
-## 📬 Contato
-Desenvolvido por **Cleiton Teles**<br>
-LinkedIn: www.linkedin.com/in/cleitonteles<br>
-E-mail: juantrick@gmail.com
-* [Portfólio de Projetos](https://github.com/CleitonTelesDev?tab=repositories)
+## ▶️ Como Reproduzir  
+
+1. Baixe o arquivo `.pbix` disponível na pasta `powerbi/`  
+2. Abra no Power BI Desktop  
+3. Explore os dashboards e interações  
+
+---
+
+## 💼 Sobre Mim  
+
+Sou um profissional de dados focado em transformar dados em **insights estratégicos que geram valor de negócio**.
+
+📫 Contato:
+
+- LinkedIn: https://www.linkedin.com/in/cleitonteles  
+- Email: juantrick@gmail.com  
+
+---
+
+## ⭐ Destaque  
+
+Este projeto demonstra habilidades em:
+
+- Modelagem de dados (Star Schema)  
+- Construção de dashboards no Power BI  
+- Criação de métricas com DAX  
+- Análise orientada a negócio  
+- Comunicação de insights  
+
+---
