@@ -47,11 +47,6 @@ O dashboard foi construído para responder perguntas fundamentais do negócio:
 * **Gráfico de Medidor:** Visualização clara do faturamento vs. meta, com ajuste dinâmico de eixo.
 * **Análise de Dispersão:** Estudo da correlação entre **Faturamento e Preço**, validando se a redução de preços aumenta o volume total de vendas.
 
-## Vendas
-![Vendas.png](https://github.com/CleitonTelesDev/Power-BI/blob/main/Vendas.png?raw=true)
-
-## Produtos
-![Produtos.png](https://github.com/CleitonTelesDev/Power-BI/blob/main/Produtos.png?raw=true)
 ---
 
 ## 🚀 Tecnologias Utilizadas
