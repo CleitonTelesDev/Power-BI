@@ -21,9 +21,8 @@ Este projeto tem como objetivo implementar uma abordagem **Data Driven**, transf
 
 ### 🔍 Visão Geral
 
-![Dashboard Vendas](imagens/dashboards/dashboard_vendas.png)
-
-![Dashboard Produtos](imagens/dashboards/dashboard_produtos.png)
+![Dashboard Vendas](https://github.com/CleitonTelesDev/Power-BI/raw/main/imagens/dashboards/dashboard_vendas.png)
+![Dashboard Produtos](https://github.com/CleitonTelesDev/Power-BI/raw/main/imagens/dashboards/dashboard_produtos.png)
 
 ---
 
