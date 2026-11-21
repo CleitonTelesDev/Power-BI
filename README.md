@@ -21,9 +21,9 @@ Este projeto tem como objetivo implementar uma abordagem **Data Driven**, transf
 
 ### 🔍 Visão Geral
 
-![Dashboard Vendas](images/dashboards/Vendas.png)
+![Dashboard Vendas](imagens/dashboards/dashboard_vendas.png)
 
-![Dashboard Produtos](images/dashboards/Produtos.png)
+![Dashboard Produtos](imagens/dashboards/dashboard_produtos.png)
 
 ---
 
